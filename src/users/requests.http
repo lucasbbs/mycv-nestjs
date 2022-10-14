@@ -1,0 +1,29 @@
+### Creates a new user
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+  "email": "lucasbbs03@live.fr",
+  "password": "123456"
+}
+
+### Find a particular user with a given ID
+
+GET http://localhost:3000/auth/2
+
+### Find all users with a given e-mail
+
+GET http://localhost:3000/auth?email=lucasbbs@live.fr
+
+### Deletes a user with the given ID
+
+DELETE http://localhost:3000/auth/6
+
+### Updates a user with the give ID
+
+PATCH http://localhost:3000/auth/2
+Content-Type: application/json
+
+{
+  "email": "lucas.braga@goco.dk"
+}
