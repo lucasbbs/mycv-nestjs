@@ -1,29 +1,41 @@
-### Creates a new user
+### Create a new user
 POST http://localhost:3000/auth/signup
-Content-Type: application/json
+content-type: application/json
 
 {
-  "email": "lucasbbs03@live.fr",
+  "email": "lucas.braga@goco.dk",
+  "password": "123456"
+  }
+
+### Sign in a user with the given credentials
+
+POST http://localhost:3000/auth/signin
+content-type: application/json
+
+{
+  "email": "lucas.braga@goco.dk",
   "password": "123456"
 }
 
+### Sign out the current user
+POST http://localhost:3000/auth/signout
+
+### Get the user session id cookie value
+GET http://localhost:3000/auth/whoami
+
 ### Find a particular user with a given ID
+GET http://localhost:3000/auth/4
 
-GET http://localhost:3000/auth/2
+### Find all users with a given email
+GET http://localhost:3000/auth?email=asdf@asdf.com
 
-### Find all users with a given e-mail
+### Delete a user given id
+DELETE http://localhost:3000/auth/11
 
-GET http://localhost:3000/auth?email=lucasbbs@live.fr
-
-### Deletes a user with the given ID
-
-DELETE http://localhost:3000/auth/6
-
-### Updates a user with the give ID
-
-PATCH http://localhost:3000/auth/2
-Content-Type: application/json
+### Update a user
+PATCH http://localhost:3000/auth/1
+content-type: application/json
 
 {
-  "email": "lucas.braga@goco.dk"
+  "password": "aaaaa"
 }
